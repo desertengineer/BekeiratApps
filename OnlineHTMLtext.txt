@@ -1,8 +1,12 @@
-Access Across Domains
-For security reasons, modern browsers do not allow access across domains.
+XMLHttpRequest
+XMLHttpRequest is a built-in browser object that allows to make HTTP requests in JavaScript.
 
-This means that both the web page and the XML file it tries to load, must be located on the same server.
+Despite having the word “XML” in its name, it can operate on any data, not only in XML format. We can upload/download files, track progress and much more.
 
-The examples on W3Schools all open XML files located on the W3Schools domain.
+Right now, there’s another, more modern method fetch, that somewhat deprecates XMLHttpRequest.
 
-If you want to use the example above on one of your own web pages, the XML files you load must be located on your own server.
+In modern web-development XMLHttpRequest is used for three reasons:
+
+Historical reasons: we need to support existing scripts with XMLHttpRequest.
+We need to support old browsers, and don’t want polyfills (e.g. to keep scripts tiny).
+We need something that fetch can’t do yet, e.g. to track upload progress.
