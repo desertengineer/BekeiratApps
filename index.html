@@ -10,7 +10,7 @@
   <link rel="icon" href="icons\AllWays.ico" type="image/png">
 </head>
 
-<body>
+<body onload = "loadDoc()">
 
 <div class="p-5 bg-primary text-white text-center">
   <h1>My First Bootstrap 5 Page</h1>
@@ -44,7 +44,7 @@
       <div class="fakeimg">
         <img class="fakeimg" src="images\fakeimg7.jpg">
       </div>
-      <p>Some text about me ..</p>
+      <p Id="demo">Some text about me ..</p>
       <h3 class="mt-4">Some Links</h3>
       <p>Lorem ipsum dolor sit ame.</p>
       <ul class="nav nav-pills flex-column">
@@ -83,5 +83,18 @@
   <p>Footer</p>
 </div>
 
+   
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "http://u.pc.cd/UmditalK", true);
+  xhttp.send();
+}
+</script>
 </body>
 </html>
